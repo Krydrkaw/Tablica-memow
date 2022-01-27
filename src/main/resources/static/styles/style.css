@@ -1,0 +1,148 @@
+html {
+    font-family: Arial;
+    background-color: #87677B;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    font-size: 23px;
+
+    background-color: #9A7AA0;
+
+    border-width: 2px;
+    border-color: #94a6a4;
+    border-style: wave;
+    border-radius: 2px;
+    padding: 3px;
+}
+
+.nav-button {
+    text-decoration: none;
+    background: #8D94BA;
+    border: 1px solid #9A7AA0;
+    padding: 10px 30px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.nav-button:active {
+    background: #acd9d9;
+    -webkit-box-shadow: inset 0 0 5px #acd9d9;
+    -moz-box-shadow: inset 0 0 5px #acd9d9;
+    box-shadow: inset 0 0 5px #acd9d9;
+    outline: none;
+}
+
+.nav-button:hover {
+    background: #748f8f;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 400px;
+    gap: 30px;
+}
+
+input {
+    height: 40px;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+textarea {
+    height: 40px;
+    font-size: 20px;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.mem-list {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 620px;
+    background-color: #8D94BA;
+    border: 1px solid #A0CFD3;
+    border-radius: 6px;
+    box-shadow: 7px 3px 3px #9A7AA0;
+}
+
+.img {
+    margin: 10px;
+}
+
+.card-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+}
+
+.card-title-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title-button {
+    width: 50px;
+    height: 50px;
+}
+
+.span-header {
+    font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.span-sub-header {
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.54);
+}
+
+
+.comment-form {
+    display: flex;
+}
+
+
+.face {
+    margin-top: 80px;
+    height: 20vmin;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .face {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

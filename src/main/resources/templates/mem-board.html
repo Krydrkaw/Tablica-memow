@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Mem board</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link th:href="@{/styles/style.css}" rel="stylesheet"/>
+</head>
+<body>
+
+<header class="navigation">
+    <a href="/" class="nav-button">Strona startowa</a>
+    <a href="/mem" class="nav-button">Tablica memów</a>
+    <a href="/mem/new" class="nav-button">Dodaj nowego mema</a>
+</header>
+
+
+<div class="mem-list">
+    <div th:each="mem: ${mems}">
+
+        <div class="card">
+            <div class="card-title">
+                <div class="card-title-text">
+                    <span th:text="${mem.title}" class="span-header"></span>
+                    <span th:text="${mem.creationDate}" class="span-sub-header"></span>
+                </div>
+
+                <a th:href="@{/mem/delete/{id}(id=${mem.id})}">
+                    <button class="card-title-button">Usuń</button>
+                </a>
+            </div>
+
+            <img th:src="${mem.src}" alt="image" class="img">
+            <span th:text="${mem.description}"></span>
+
+
+            <div>
+                <ul>
+                    <li th:each="comment: ${mem.comments}" th:text="${comment}"></li>
+                </ul>
+
+                <button th:id="add-comment+${mem.id}" th:onclick="'showCommentPanel(\'' + ${mem.id} + '\');'">+</button>
+                <div th:id="add-comment-section+${mem.id}" class="comment-form" style="display: none">
+                    <form th:action="@{/mem/{id}/comment/new(id=${mem.id})}" th:object="${newComment}" method="post"
+                          class="comment-form">
+                        <textarea th:field="*{text}" placeholder="Treść komentarza" rows="3" required></textarea>
+                        <input type="submit" value="Dodaj nowy komentarz"/>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+<script>
+    function showCommentPanel(memId) {
+        let form = document.getElementById("add-comment-section" + memId);
+        form.style.display = 'flex';
+    }
+
+</script>
+
+</body>
+</html>

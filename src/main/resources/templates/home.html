@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Mem board</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link th:href="@{/styles/style.css}" rel="stylesheet"/>
+
+</head>
+<body>
+
+<header class="navigation">
+    <a href="/" class="nav-button">Strona startowa</a>
+    <a href="/mem" class="nav-button">Tablica memów</a>
+    <a href="/mem/new" class="nav-button">Dodaj nowego mema</a>
+</header>
+
+
+<div class="content">
+    <img class="face" th:src="@{/image/mem_face.png}" alt="face"/>
+</div>
+
+
+</body>
+</html>
